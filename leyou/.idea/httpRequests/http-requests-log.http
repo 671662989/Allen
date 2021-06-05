@@ -1,0 +1,12 @@
+GET http://localhost:8081/category/names?ids=1,2,3
+
+<> 2021-06-04T042407.200.json
+
+###
+
+GET http://localhost:8081/category/names
+
+<> 2021-06-04T042343.400.json
+
+###
+
