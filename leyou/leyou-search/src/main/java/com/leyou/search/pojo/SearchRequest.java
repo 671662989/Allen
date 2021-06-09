@@ -1,5 +1,7 @@
 package com.leyou.search.pojo;
 
+import java.util.Map;
+
 /**
  * create by: cdy
  * description:$
@@ -12,6 +14,9 @@ package com.leyou.search.pojo;
 public class SearchRequest {
     private String key;
     private Integer page;
+    private  String sortBy;
+    private Map<String,Object> filter;
+    private  Boolean descending;
     private static final Integer DEFAULT_SIZE = 20;
     private static final Integer DEFAULT_PAGE = 1;
 
@@ -34,7 +39,31 @@ public class SearchRequest {
         this.page = page;
     }
 
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    public Boolean getDescending() {
+        return descending;
+    }
+
+    public void setDescending(Boolean descending) {
+        this.descending = descending;
+    }
+
     public Integer getSize(){
         return  DEFAULT_SIZE;
+    }
+
+    public Map<String, Object> getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Map<String, Object> filter) {
+        this.filter = filter;
     }
 }

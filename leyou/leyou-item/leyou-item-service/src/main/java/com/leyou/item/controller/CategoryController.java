@@ -58,4 +58,12 @@ public class CategoryController {
         }
         return  ResponseEntity.ok(list);
     }
+    @GetMapping("all/level")
+    public ResponseEntity<List<Category>> queryAllLevel(@RequestParam(name = "id")Long cid3){
+      List<Category> allLevel=  this.categoryService.queryAllLevel(cid3);
+      if(CollectionUtils.isEmpty(allLevel)){
+          return  ResponseEntity.notFound().build();
+      }
+      return ResponseEntity.ok(allLevel);
+    }
 }

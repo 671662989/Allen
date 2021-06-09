@@ -23,7 +23,7 @@ import java.util.List;
  * @return $
  */
 @RestController
-@RequestMapping("search")
+@RequestMapping
 public class SearchController {
 
     @Autowired
