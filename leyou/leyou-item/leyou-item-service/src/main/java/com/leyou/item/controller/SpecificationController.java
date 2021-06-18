@@ -85,4 +85,12 @@ public class SpecificationController {
          return  ResponseEntity.ok().build();
     }
 
+    @GetMapping("{cid}")
+    public  ResponseEntity<List<SpecGroup>> querySpecByCid(@PathVariable(name = "cid") Long cid){
+        List<SpecGroup> specGroup= this.service.querySpecByCid(cid);
+        if(CollectionUtils.isEmpty(specGroup)){
+            return ResponseEntity.notFound().build();
+        }
+        return  ResponseEntity.ok(specGroup);
+    }
 }

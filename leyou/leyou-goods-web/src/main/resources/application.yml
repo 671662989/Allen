@@ -1,19 +1,15 @@
-server:
-  port: 8083
 spring:
   application:
-    name: search-service
-  data:
-    elasticsearch:
-      cluster-nodes: 192.168.49.3:9300
-      cluster-name: elasticsearch
-  jackson:
-    default-property-inclusion: non_null
+    name: goods-web
+  thymeleaf:
+    cache: false
   rabbitmq:
     virtual-host: /leyou
     username: leyou
     password: leyou
     host: 192.168.49.3
+server:
+  port: 8084
 eureka:
   client:
     service-url:

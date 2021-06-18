@@ -78,4 +78,14 @@ public class SpecificationService {
         specParam.setSearching(searching);
         return  this.specParamMapper.select(specParam);
     }
+
+    public List<SpecGroup> querySpecByCid(Long cid) {
+        List<SpecGroup> specGroups = this.queryGroupsByPID(cid);
+        specGroups.forEach(specGroup -> {
+            List<SpecParam> specParams = this.queryParamsByGID(specGroup.getId());
+            specGroup.setParams(specParams);
+        });
+
+     return  specGroups;
+    }
 }

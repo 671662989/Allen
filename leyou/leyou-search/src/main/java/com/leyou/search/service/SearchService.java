@@ -279,4 +279,18 @@ public class SearchService {
     }
 
 
+    public void createIndex(Long id) throws Exception{
+
+        Spu spu = this.goodsClient.querySpuById(id);
+
+        Goods goods = this.buildGoods(spu);
+
+        this.reponsitory.save(goods);
+
+    }
+
+    public void deleteIndex(Long id) {
+
+        this.reponsitory.deleteById(id);
+    }
 }

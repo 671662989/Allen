@@ -9,6 +9,11 @@ spring:
       cluster-name: elasticsearch
   jackson:
     default-property-inclusion: non_null
+  rabbitmq:
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+    host: 192.168.49.3
 eureka:
   client:
     service-url:

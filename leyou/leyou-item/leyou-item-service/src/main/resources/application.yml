@@ -10,6 +10,14 @@ spring:
     hikari:
       max-lifetime: 28830000
       maximum-pool-size: 9
+  rabbitmq:
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+    host: 192.168.49.3
+    template:
+      exchange: leyou.item.exchange
+    publisher-confirms: true
 eureka:
   client:
     service-url:
