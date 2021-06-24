@@ -13,5 +13,6 @@ zuul:
   routes:
     item-service: /item/**
     search-service: /search/**
+    user-service: /user/**
   ignored-patterns:
     - upload-service
