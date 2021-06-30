@@ -14,5 +14,24 @@ zuul:
     item-service: /item/**
     search-service: /search/**
     user-service: /user/**
+    auth-service: /auth/**
+    cart-service: /cart/**
   ignored-patterns:
     - upload-service
+  add-host-header: true
+  sensitive-headers:
+ribbon:
+  ReadTimeout: 8000
+  SocketTimeout: 60000
+leyou:
+  jwt:
+    pubKeyPath: E:\\tmp\\rsa\\rsa.pub
+    cookieName: LY_TOKEN
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/item
+      - /api/user/check
+      - /api/user/code

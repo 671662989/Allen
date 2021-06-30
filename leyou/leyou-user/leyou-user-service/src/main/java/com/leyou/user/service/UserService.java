@@ -104,7 +104,7 @@ public class UserService {
         if(null == user){
             return null;
         }
-        if(CodecUtils.md5Hex(password,user.getSalt()) != user.getPassword()){
+        if(!StringUtils.equals(CodecUtils.md5Hex(password,user.getSalt()), user.getPassword())){
             return  null;
         }
         return user;

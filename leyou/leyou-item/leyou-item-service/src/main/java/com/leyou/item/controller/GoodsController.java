@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.ws.Response;
 import java.util.List;
 
 /**
@@ -80,6 +81,14 @@ public class GoodsController {
             return  ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(spu);
+    }
+    @GetMapping("sku/{id}")
+    public ResponseEntity<Sku> querySkuById(@PathVariable("id")Long id){
+        Sku sku = this.goodsService.querySkuById(id);
+        if(null == sku){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(sku);
     }
 
 }
